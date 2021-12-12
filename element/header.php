@@ -22,5 +22,5 @@
         <li><a class="<?php if($_GET['x']=='blog') echo 'active';?>" href="blog">Blog</a></li>
         <li><a class="<?php if($_GET['x']=='member') echo 'active';?>" href="member">Member</a></li>
         <li><a class="<?php if($_GET['x']=='profile') echo 'active';?>" href="profile">Profile</a></li>
-        <li><a href="logout">Sign-in/Logout</a></li>
+        <li><a href="sign-in/index.html">Login</a></li>
     </ul>

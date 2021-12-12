@@ -82,6 +82,53 @@ color: #FFFFFF;">
             backdrop-filter: blur(70px);
             /* Note: backdrop-filter has minimal browser support */
             border-radius: 30px;">
+          <div class="row mb-3 mt-5 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Nama</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">NIK</label>
+            <div class="col-sm-8 ">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Tempat Tanggal Lahir</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Alamat</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Bidang</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Status</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="row mb-3 ms-4">
+            <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6" style="color: #FFFFFF;">Departement</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" id="colFormLabel">
+            </div>
+          </div>
+          <div class="mt-5 col-9 offset-3">
+            <button type="button" class="btn btn-warning mx-2" style="width: 150px;">Ubah Password</button>
+            <button type="button" class="btn btn-primary mx-2 " style="width: 150px;">Save</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

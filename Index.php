@@ -9,7 +9,7 @@ if (empty($_GET['x'])) {
     require "home.php";
 }  else if ($_GET['x'] == 'profile') {
     require "profile.php";
-} else {
+}else {
     echo (" <script>
     window.location = 'home';
         </script>");
