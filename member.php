@@ -19,12 +19,17 @@
 
 <body style="background-color:#23651d">
     <div class="first">
-        <?php include_once("element/header.php"); ?>
+        <?php
+        include_once("element/header.php");
+        $data = mysqli_query($conn, "SELECT * FROM login 
+        LEFT JOIN member ON login.id=member.id_user");
+        ?>
     </div>
     <div class="second mt-5">
-        <div class="container">
+        <div class="container mb-5 pb-5">
             <div class="row">
-                <div class="col-auto mx-auto" style="background: rgba(248, 248, 248, 0.2);
+                <?php foreach($data as $hasil){?>
+                <div class="col-auto mx-auto mb-4" style="background: rgba(248, 248, 248, 0.2);
                 border: 3px solid #FFFFFF;
                 width: 552px;
                 height: 270px;
@@ -34,704 +39,55 @@
                 filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
                     <div class="row">
                         <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
+                            <img style="width: 160px;
+                        height: 203px;" src="docs/<?php echo $hasil['foto'] ?>" alt="">
                         </div>
                         <div class="col-auto mt-4" style="
                         font-weight: semi-bold;
-                        font-size: 20px;
+                        font-size: 1rem;
                         line-height: 30px;
                         color: #FFFFFF;">
                             <table>
                                 <tr>
                                     <td>No. KTA</td>
                                     <td width="10px"></td>
-                                    <td>: 0000</td>
+                                    <td>: <?php echo $hasil['nokta'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Nama</td>
                                     <td width="10px"></td>
-                                    <td>: Baihaqi</td>
+                                    <td>: <?php echo $hasil['nama'] ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Tempat Tanggal Lahir</td>
+                                    <td>Tanggal Lahir</td>
                                     <td width="10px"></td>
-                                    <td>: Kerohanian</td>
+                                    <td>: <?php echo $hasil['tgllahir'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat</td>
                                     <td width="10px"></td>
-                                    <td>: Kerohanian</td>
+                                    <td>: <?php echo $hasil['alamat'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Status</td>
                                     <td width="10px"></td>
-                                    <td>: Kerohanian</td>
+                                    <td>: <?php echo $hasil['status'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Bidang</td>
                                     <td width="10px"></td>
-                                    <td>: Kerohanian</td>
+                                    <td>: <?php echo $hasil['bidang'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Dapartement</td>
                                     <td width="10px"></td>
-                                    <td>: Kerohanian</td>
+                                    <td>: <?php echo $hasil['departemen'] ?></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-auto mx-auto" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-auto mx-auto mt-4" style="background: rgba(248, 248, 248, 0.2);
-                border: 3px solid #FFFFFF;
-                width: 552px;
-                height: 270px;
-                box-sizing: border-box;
-                backdrop-filter: blur(70px);
-                border-radius: 10px;
-                filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));">
-                    <div class="row">
-                        <div class="col-4 mt-4">
-                            <img style="width: 150px;
-                        height: 187.5px;" src="docs/user.png" alt="">
-                        </div>
-                        <div class="col-auto mt-4" style="
-                        font-weight: semi-bold;
-                        font-size: 20px;
-                        line-height: 30px;
-                        color: #FFFFFF;">
-                            <table>
-                                <tr>
-                                    <td>No. KTA</td>
-                                    <td width="10px"></td>
-                                    <td>: 0000</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td width="10px"></td>
-                                    <td>: Baihaqi</td>
-                                </tr>
-                                <tr>
-                                    <td>Tempat Tanggal Lahir</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Bidang</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                                <tr>
-                                    <td>Dapartement</td>
-                                    <td width="10px"></td>
-                                    <td>: Kerohanian</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+                <?php }?>
             </div>
         </div>
     </div>

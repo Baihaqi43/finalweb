@@ -21,7 +21,13 @@
 
 <body style="background-color:#23651d">
     <div class="first">
-        <?php include_once("element/header.php"); ?>
+        <?php
+        include_once("element/header.php");
+        $data = mysqli_query($conn, "SELECT * FROM login 
+        LEFT JOIN member ON login.id=member.id_user
+        WHERE username='$_SESSION[username]'");
+        $hasil = mysqli_fetch_array($data);
+        ?>
     </div>
     <div class="second">
     </div>
@@ -31,8 +37,8 @@
             <div class="card">
                 <div class="content w-100 row" style="background-color:transparent">
                     <div class="col-4">
-                        <img width="150px" height="150px" src="docs/user.png" class="rounded-circle" alt="user"
-                            style="object-fit:cover; object-position:top;">
+                        <img width="150px" height="150px" src="docs/<?php echo $hasil['foto'] ?>" class="rounded-circle"
+                            alt="user" style="object-fit:cover; object-position:top;">
                     </div>
                     <div class="col-8 text-start" style="
                           font-weight: semi-bold;
@@ -43,22 +49,22 @@
                             <tr>
                                 <td>No. KTA</td>
                                 <td width="30px"></td>
-                                <td>: 0000</td>
+                                <td>: <?php echo $hasil['nokta'] ?> </td>
                             </tr>
                             <tr>
                                 <td>Nama</td>
                                 <td width="30px"></td>
-                                <td>: Baihaqi</td>
+                                <td>: <?php echo $hasil['nama'] ?> </td>
                             </tr>
                             <tr>
                                 <td>Status</td>
                                 <td width="30px"></td>
-                                <td>: Aktif</td>
+                                <td>: <?php echo $hasil['status'] ?> </td>
                             </tr>
                             <tr>
                                 <td>Dapartement</td>
                                 <td width="30px"></td>
-                                <td>: Kerohanian</td>
+                                <td>: <?php echo $hasil['departemen'] ?> </td>
                             </tr>
 
                         </table>
@@ -85,53 +91,59 @@
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">Nama</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel" value="<?php echo $hasil['nama'] ?>">
                     </div>
                 </div>
                 <div class="row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">NIK</label>
                     <div class="col-sm-8 ">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel" value="<?php echo $hasil['nik']?>">
                     </div>
                 </div>
-                <div class="row mb-3 ms-4">
+                <div class=" row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
-                        style="color: #FFFFFF;">Tempat Tanggal Lahir</label>
+                        style="color: #FFFFFF;">Tanggal Lahir</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            value="<?php echo $hasil['tgllahir'] ?>">
                     </div>
                 </div>
-                <div class="row mb-3 ms-4">
+                <div class=" row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">Alamat</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            value="<?php echo $hasil['alamat'] ?>">
                     </div>
                 </div>
-                <div class="row mb-3 ms-4">
+                <div class=" row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">Bidang</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            value="<?php echo $hasil['bidang'] ?>" disabled>
                     </div>
                 </div>
                 <div class="row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">Status</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            value="<?php echo $hasil['status'] ?>" disabled>
                     </div>
                 </div>
                 <div class="row mb-3 ms-4">
                     <label for="colFormLabel" class="col-sm-3 col-form-label fw-bold fs-6"
                         style="color: #FFFFFF;">Departement</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="colFormLabel">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            value="<?php echo $hasil['departemen'] ?>" disabled>
                     </div>
                 </div>
                 <div class="mt-5 col-9 offset-3">
-                    <button type="button" class="btn btn-warning mx-2" style="width: 150px;">Ubah Password</button>
+                    <button type="button" class="btn btn-warning mx-2" style="width: 150px;">Ubah
+                        Password</button>
                     <button type="button" class="btn btn-primary mx-2 " style="width: 150px;">Save</button>
                 </div>
             </div>

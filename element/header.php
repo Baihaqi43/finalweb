@@ -1,3 +1,6 @@
+    <?php 
+    include_once "proses/koneksi.php";
+    Include_once "proses/session.php";?>
     <div class="navbar">
         <div class="logo">
             <a href=""><img src="docs/logo.png" alt=""></a>
@@ -5,7 +8,8 @@
         <div class="search">
             <img src="docs/search_icon.png" alt="" style="margin-top:3px">
             <form action="">
-                <input type="text" name="search" id="all_search" placeholder="Search.." style="font-size:unset; line-height:0px; box-sizing:content-box;">
+                <input type="text" name="search" id="all_search" placeholder="Search.."
+                    style="font-size:unset; line-height:0px; box-sizing:content-box;">
             </form>
         </div>
         <ul style="margin-bottom: 0;">
@@ -22,5 +26,10 @@
         <li><a class="<?php if ($_GET['x'] == 'blog') echo 'active'; ?>" href="blog">Blog</a></li>
         <li><a class="<?php if ($_GET['x'] == 'member') echo 'active'; ?>" href="member">Member</a></li>
         <li><a class="<?php if ($_GET['x'] == 'profile') echo 'active'; ?>" href="profile">Profile</a></li>
-        <li><a href="sign-in/index.html">Login</a></li>
+        <?php 
+        if(empty($_SESSION['username'])) {
+            echo "<li><a href='sign-in/index.html'>Login</a></li>";}
+        else{
+            echo "<li><a href='proses/sign-out.php'>Logout - " . $_SESSION['username'] . "</a></li>";}
+        ?>
     </ul>
