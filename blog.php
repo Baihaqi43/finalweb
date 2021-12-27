@@ -113,7 +113,11 @@
             </div>
         </div>
     </div>
-
+    <div class="footer mt-5">
+        <h6>
+            &#169 2021 Copyright by <a href="" style="color:inherit">Space.devs</a>
+        </h6>
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
