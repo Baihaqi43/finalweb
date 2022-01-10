@@ -25,11 +25,13 @@
         <li><a class="<?php if ($_GET['x'] == 'about') echo 'active'; ?>" href="about">About</a></li>
         <li><a class="<?php if ($_GET['x'] == 'blog') echo 'active'; ?>" href="blog">Blog</a></li>
         <li><a class="<?php if ($_GET['x'] == 'member') echo 'active'; ?>" href="member">Member</a></li>
-        <li><a class="<?php if ($_GET['x'] == 'profile') echo 'active'; ?>" href="profile">Profile</a></li>
         <?php 
         if(empty($_SESSION['username'])) {
             echo "<li><a href='sign-in/index.html'>Login</a></li>";}
         else{
+            echo "<li><a class='";
+            if ($_GET['x'] == 'profile') echo 'active';
+            echo "' href='profile'>Profile</a></li>";
             echo "<li><a href='proses/sign-out.php'>Logout - " . $_SESSION['username'] . "</a></li>";}
         ?>
     </ul>

@@ -31,7 +31,7 @@
     </div>
     <div class="second">
     </div>
-    <h1 class="text-center my-5 " style="font-weight: 600; color:white">Selamat Datang User</h1>
+    <h1 class="text-center my-5 " style="font-weight: 600; color:white">Selamat Datang <?php echo $hasil['nama']?></h1>
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="card">

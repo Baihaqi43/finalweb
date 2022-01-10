@@ -23,8 +23,95 @@
         include_once("element/header.php");
         $data = mysqli_query($conn, "SELECT * FROM login 
         LEFT JOIN member ON login.id=member.id_user");
+        $data2 = mysqli_query($conn, "SELECT level FROM login WHERE username = '$_SESSION[username]'");
+        $data_ = mysqli_fetch_array($data2);
         ?>
     </div>
+
+    <!-- Button trigger modal -->
+    <?php
+    if($data_['level'] == 'admin'){ ?>
+    <button type="button" class="sticky-top btn btn-warning" data-bs-toggle="modal" data-bs-target="#tambahanggota">
+        Tambah Anggota
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            <path fill-rule="evenodd"
+                d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+        </svg>
+    </button>
+    <?php }?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tambahanggota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Anggota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="proses/prose_tambahanggota.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Email :</label>
+                            <input name="username" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Password :</label>
+                            <input name="password" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">level :</label>
+                            <input name="level" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">No KTA:</label>
+                            <input name="nokta" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nama :</label>
+                            <input name="nama" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">NIK :</label>
+                            <input name="nik" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Tanggal lahir:</label>
+                            <input name="tgl" type="date" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Alamat:</label>
+                            <input name="alamat" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Status:</label>
+                            <input name="status" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Bidang :</label>
+                            <input name="bidang" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Departement:</label>
+                            <input name="departemen" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Upoload Foto:</label>
+                            <input name="foto" type="file" class="form-control" id="recipient-name">
+                        </div> -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Akhir Modal Tambah Data Barang-->
+
     <div class="second mt-5">
         <div class="container mb-5 pb-5">
             <div class="row">
